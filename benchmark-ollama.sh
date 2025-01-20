@@ -2,6 +2,7 @@
 
 HOST=localhost
 PORT=11435
+
 URL=http://$HOST:$PORT/api/generate
 
 #    -c, --connections <N>  Connections to keep open   
