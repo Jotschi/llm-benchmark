@@ -1,7 +1,7 @@
 #!/bin/bash
 
-HOST=localhost
-PORT=11435
+HOST="${1:=localhost}"
+PORT="${2:=11435}"
 
 URL=http://$HOST:$PORT/api/generate
 
@@ -15,4 +15,4 @@ URL=http://$HOST:$PORT/api/generate
 #        --timeout     <T>  Socket/request timeout     
 #    -v, --version          Print version details  
 
-wrk $URL -s wrk-ollama-post.lua --timeout 8000 --latency -t $1 -c $1 -d 30s
+wrk $URL -s wrk-ollama-post.lua --timeout 8000 --latency -t $3 -c $3 -d 30s

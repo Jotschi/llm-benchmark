@@ -6,16 +6,24 @@ This repo contains benchmark scripts that can be used to assess local inference 
 
 ```bash
 # Test connection to ollama instance
-./test-ollama.sh
+./test-ollama.sh my.host.tld 11435
 
 # Test connection to vllm instance
-./test-vllm.sh
+./test-vllm.sh my.host.tld 10200
 
+# Test connection to tei instance
+./test-tei.sh my.host.tld 10503
+```
+
+```bash
 # Run ollama benchmark with concurrency of 128
-./benchmark-ollama.sh 128
+./benchmark-ollama.sh my.host.tld 11435 128
 
 # Run vLLM benchmark with concurrency of 128
-./benchmark-vllm.sh 128
+./benchmark-vllm.sh my.host.tld 10200 128
+
+# Run TEI benchmark
+./benchmark-tei.sh my.host.tld 10503 128
 ```
 
 ## A100

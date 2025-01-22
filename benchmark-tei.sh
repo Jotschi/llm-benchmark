@@ -1,9 +1,9 @@
 #!/bin/bash
 
-HOST=localhost
-PORT=10200
+HOST="${1:=localhost}"
+PORT="${2:=10503}"
 
-URL=http://$HOST:$PORT/v1/chat/completions
+URL=http://$HOST:$PORT/embed
 
 #    -c, --connections <N>  Connections to keep open   
 #    -d, --duration    <T>  Duration of test           
@@ -15,4 +15,4 @@ URL=http://$HOST:$PORT/v1/chat/completions
 #        --timeout     <T>  Socket/request timeout     
 #    -v, --version          Print version details  
 
-wrk $URL -s wrk-tei-post.lua --timeout 8000 --latency -t $1 -c $1 -d 30s
+wrk $URL -s wrk-tei-post.lua --timeout 8000 --latency -t $3 -c $3 -d 30s

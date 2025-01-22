@@ -1,7 +1,7 @@
 #!/bin/bash
 
-HOST=localhost
-PORT=10200
+HOST="${1:=localhost}"
+PORT="${2:=10200}"
 
 URL=http://$HOST:$PORT/v1/chat/completions
 curl -vv $URL \
